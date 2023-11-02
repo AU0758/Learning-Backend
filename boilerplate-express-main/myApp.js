@@ -9,12 +9,18 @@ stylePath = __dirname + '/public/style.css'
 app.get(
     '/',
     function(req, res) {
+        res.send('Hello Express');
+    }
+);
+app.get(
+    '/',
+    function(req, res) {
         res.sendFile(indexPath);
     }
 );
 app.use(
     '/',
-    express.static(stylePath)
+    express.static(stylePath);
 )
 
 
