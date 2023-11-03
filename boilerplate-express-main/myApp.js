@@ -7,21 +7,11 @@ indexPath = __dirname + '/views/index.html'
 stylePath = __dirname + '/public/style.css'
 
 app.get(
-    '/',
+    '/json',
     function(req, res) {
-        res.send('Hello Express');
+        res.json({"message": "Hello json"});
     }
 );
-app.get(
-    '/',
-    function(req, res) {
-        res.sendFile(indexPath);
-    }
-);
-app.use(
-    '/',
-    express.static(stylePath);
-)
 
 
 res.sendFile(stylePath);
